@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --heigth-header: 150px;
+  --heigth-navbar: 50px;
+  --max-width: 1400px;
+  /*! FONTS */
+  --heading-1: 26px;
+  --heading-2: 20px;
+  --heading-3: 16px;
+  --heading-4: 14px;
+  --heading-5: 10px;
+  /*!COLORS */
+  --primary-color: #374664;
+  --secondary-color: #4a639a;
+  --complementary-color: #4af6d7;
+  --background-color: #edf3f6;
+  --disabled-color: #999999;
+  --white-color: #fdfdfd;
+  --black-color: #202020;
+
+  /*!/SHADOW */
+  --card-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  --categories-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  --our-service-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  --image-product-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  /* !BORDER */
+  --border-primary: 1px solid var(--background-primary);
+  --border-variant: 1px solid var(--background-variant);
+  --border-disabled: 1px solid var(--background-disabled);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  list-style: none;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
