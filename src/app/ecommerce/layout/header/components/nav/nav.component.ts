@@ -1,38 +1,14 @@
-import { Component, inject } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  ValidationErrors,
-  Validators,
-} from '@angular/forms';
+import { Component } from '@angular/core';
 
 import { TuiIcon } from '@taiga-ui/core';
+import { TuiBadgedContent } from '@taiga-ui/kit';
+import { SearcherComponent } from '../../../../../shared/components/searcher/searcher.component';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [TuiIcon, ReactiveFormsModule],
+  imports: [TuiIcon, TuiBadgedContent, SearcherComponent],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
-export class NavComponent {
-  public searchForm!: FormGroup;
-
-  private readonly formBuilder = inject(FormBuilder);
-
-  ngOnInit(): void {
-    this.searchForm = this.formBuilder.group({
-      search: ['', [Validators.required, this.noSpaceValidator]],
-    });
-  }
-
-  private noSpaceValidator(control: AbstractControl): ValidationErrors | null {
-    const value = control.value as string;
-    if (value?.trim().length === 0) {
-      return { noOnlySpaces: true };
-    }
-    return null;
-  }
-}
+export class NavComponent {}

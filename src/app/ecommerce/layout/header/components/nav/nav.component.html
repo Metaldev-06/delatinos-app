@@ -5,12 +5,13 @@
     <a>Info de Envíos</a>
   </div>
 
-  <form [formGroup]="searchForm">
-    <input />
-  </form>
+  <app-searcher class="nav__searcher" />
 
   <div class="nav__interactions">
     <button><tui-icon icon="@tui.user"></tui-icon></button>
-    <button><tui-icon icon="@tui.shopping-bag"></tui-icon></button>
+    <button>
+      <tui-icon icon="@tui.shopping-bag"> </tui-icon>
+      <span class="badge">+99</span>
+    </button>
   </div>
 </nav>

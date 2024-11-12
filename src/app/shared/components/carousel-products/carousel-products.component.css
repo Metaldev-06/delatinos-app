@@ -1,0 +1,9 @@
+.carousel__container {
+  width: 95%;
+  max-width: var(--max-width);
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+tui-carousel {
+}

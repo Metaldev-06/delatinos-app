@@ -1,0 +1,100 @@
+.product__grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .products__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .product__card {
+      width: 246px;
+      height: 343px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: var(--white-color);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      color: var(--tertiary-color);
+
+      .product__image {
+        width: 100%;
+        height: 162px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .product__info {
+        width: 100%;
+        height: 180px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__card {
+          width: 100%;
+          max-height: 40px;
+          text-align: left;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* Limitar a 2 líneas */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal; /* Permite el salto de línea */
+        }
+
+        .center__card {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .price__card {
+            font-weight: bold;
+            font-size: 1.3rem;
+          }
+
+          .info__card {
+            color: var(--secondary-color);
+          }
+
+          .badge__card {
+            padding: .3rem .5rem;
+            background-color: var(--complementary-color);
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid var(--primary-color);
+            text-transform: uppercase;
+            font-size: .7rem;
+          }
+        }
+
+        .bottom__card {
+          width: 100%;
+          button {
+            width: 100%;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid var(--tertiary-color);
+            border-radius: 8px;
+            color: var(--tertiary-color);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<section class="carousel__container wrapper" tuiCarouselButtons>
+  <tui-carousel
+    [draggable]="false"
+    [itemsCount]="4"
+    [(index)]="index"
+    #carousel
+    class="carousel"
+  >
+    <button
+      iconStart="@tui.chevron-left"
+      tuiIconButton
+      type="button"
+      (click)="carousel.prev()"
+    >
+      Previous
+    </button>
+      @for (product of products(); track product.id) {
+        <app-products-card *tuiItem [product]="product" />
+      }
+
+    <button
+      iconStart="@tui.chevron-right"
+      tuiIconButton
+      type="button"
+      (click)="carousel.next()"
+    >
+      Next
+    </button>
+    <tui-pagination size="s" class="pagination" [length]="products().length" [index]="index"></tui-pagination>
+  </tui-carousel>
+</section>
+
+

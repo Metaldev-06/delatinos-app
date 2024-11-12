@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --heigth-header: 150px;
+  --heigth-header: 100px;
   --heigth-navbar: 50px;
   --max-width: 1400px;
   /*! FONTS */
@@ -12,8 +12,9 @@
   /*!COLORS */
   --primary-color: #374664;
   --secondary-color: #4a639a;
+  --tertiary-color: #2F3F61;
   --complementary-color: #4af6d7;
-  --background-color: #edf3f6;
+  --background-color: #ecf3f6;
   --disabled-color: #999999;
   --white-color: #fdfdfd;
   --black-color: #202020;
@@ -27,6 +28,8 @@
   --border-primary: 1px solid var(--background-primary);
   --border-variant: 1px solid var(--background-variant);
   --border-disabled: 1px solid var(--background-disabled);
+
+  --tui-background-base: var(--background-color);
 }
 
 * {
@@ -35,9 +38,14 @@
   box-sizing: border-box;
 }
 
+html {
+}
+
 body {
   list-style: none;
   text-decoration: none;
+  scrollbar-gutter: stable;
+  scrollbar-gutter: stable both-edges;
 }
 
 button {

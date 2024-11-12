@@ -1,0 +1,20 @@
+<div class="product__card">
+  <div class="product__image">
+    <img [src]="product().images[0].imageUrl" [alt]="product().name">
+  </div>
+  <div class="product__info">
+    <div class="header__card">
+      <p>{{product().name | titlecase}} - {{product().brandId.name | titlecase}}</p>
+    </div>
+
+    <div class="center__card">
+      <span class="price__card">{{product().price | currency  }}</span>
+      <span class="info__card">{{product().information}}</span>
+      <span class="badge__card">{{product().stock > 0 ? 'en stock' : 'sin stock'}}</span>
+    </div>
+
+    <div class="bottom__card">
+      <button>Añadir al Carrito</button>
+    </div>
+  </div>
+</div>
