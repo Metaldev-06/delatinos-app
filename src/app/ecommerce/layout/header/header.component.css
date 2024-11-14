@@ -3,7 +3,6 @@
   min-height: var(--heigth-header);
   background-color: var(--primary-color);
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }

@@ -1,35 +1,13 @@
-<app-countries-section />
-@if(products().length > 0) {
-  <app-carousel-products [products]="products()" />
+<app-countries-section/>
+@if (products().length > 0) {
+  <app-carousel-products [products]="products()" [title]="'novedades'"/>
+}
+@if (products().length > 0) {
+  <app-carousel-products [products]="products()" [title]="'más vendidos'"/>
 }
 
+<app-divider/>
 
-<section class="product__grid">
-  <article class="products__filter"></article>
-  <article class="products__container">
-    @if (products()) {
-      @for (product of products(); track $index) {
-      <div class="product__card">
-        <div class="product__image">
-          <img [src]="product.images[0].imageUrl" [alt]="product.name">
-        </div>
-        <div class="product__info">
-          <div class="header__card">
-            <p>{{product.name | titlecase}} - {{product.brandId.name | titlecase}}</p>
-          </div>
-
-          <div class="center__card">
-            <span class="price__card">{{product.price | currency  }}</span>
-            <span class="info__card">{{product.information}}</span>
-            <span class="badge__card">{{product.stock > 0 ? 'en stock' : 'sin stock'}}</span>
-          </div>
-
-          <div class="bottom__card">
-            <button>Añadir al Carrito</button>
-          </div>
-        </div>
-      </div>
-      }
-    }
-  </article>
-</section>
+@if (data()) {
+  <app-products-grid [products]="data()"/>
+}

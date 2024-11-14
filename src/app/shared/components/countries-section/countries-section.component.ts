@@ -1,10 +1,10 @@
-import { TitleCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import {TitleCasePipe} from '@angular/common';
+import {ChangeDetectionStrategy, Component, DestroyRef, inject, OnInit, signal} from '@angular/core';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
-interface Country {
-  name: string;
-  image: string;
-}
+import {CountriesService} from '../../../core/services/countries.service';
+import {CountriesData, CountriesResponse} from '../../../core/interfaces/countries.interface';
+
 
 @Component({
   selector: 'app-countries-section',
@@ -12,24 +12,20 @@ interface Country {
   imports: [TitleCasePipe],
   templateUrl: './countries-section.component.html',
   styleUrl: './countries-section.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CountriesSectionComponent {
-  public countries = signal<Country[]>([
-    {
-      name: 'argentina',
-      image: 'argentina.jpg',
-    },
-    {
-      name: 'colombia',
-      image: 'colombia.svg',
-    },
-    {
-      name: 'mexico',
-      image: 'mexico.svg',
-    },
-    {
-      name: 'venezuela',
-      image: 'venezuela.svg',
-    },
-  ]);
+export class CountriesSectionComponent implements OnInit {
+  public countries = signal<CountriesData[]>([])
+
+  private readonly countriesService = inject(CountriesService)
+  private readonly destroyRef = inject(DestroyRef);
+
+
+  ngOnInit(): void {
+    this.countriesService.getCountries().pipe(
+      takeUntilDestroyed(this.destroyRef),
+    ).subscribe((countries: CountriesResponse) => {
+      this.countries.set(countries.data);
+    })
+  }
 }

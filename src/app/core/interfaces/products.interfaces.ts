@@ -17,12 +17,20 @@ export interface ProductData {
   brandId:       ID;
   categoryId:    ID;
   subCategoryId: ID;
-  countryId:     ID;
+  countryId:     Country;
 }
 
 export interface ID {
   id:        number;
   name:      string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Country {
+  id: number;
+  name:      string;
+  image: string;
   createdAt: Date;
   updatedAt: Date;
 }

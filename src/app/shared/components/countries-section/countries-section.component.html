@@ -1,14 +1,17 @@
 <section class="countries__section">
   <div class="countries__container">
     @for (country of countries(); track $index) {
-    <div class="image__container">
-      <img
-        [src]="'/images/' + country.image"
-        [alt]="'Bandera de ' + country.name | titlecase"
-        [title]="'Bandera de ' + country.name | titlecase"
-      />
-      <span>{{ country.name | titlecase }}</span>
-    </div>
+      <div class="image__container">
+        <div class="flag__country">
+          <img
+            [src]="country.image"
+            [alt]="'Bandera de ' + country.name | titlecase"
+            [title]="'Bandera de ' + country.name | titlecase"
+          />
+        </div>
+
+        <span>{{ country.name | titlecase }}</span>
+      </div>
     }
   </div>
 </section>

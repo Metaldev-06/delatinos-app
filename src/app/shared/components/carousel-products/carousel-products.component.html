@@ -1,33 +1,41 @@
 <section class="carousel__container wrapper" tuiCarouselButtons>
-  <tui-carousel
-    [draggable]="false"
-    [itemsCount]="4"
-    [(index)]="index"
-    #carousel
-    class="carousel"
-  >
+  <app-title [title]="title()"/>
+  <article class="carousel__products">
     <button
       iconStart="@tui.chevron-left"
       tuiIconButton
       type="button"
-      (click)="carousel.prev()"
+      (click)="prevSlide()"
     >
       Previous
     </button>
+
+    <tui-carousel
+      [draggable]="false"
+      [itemsCount]="itemsCount()"
+      [(index)]="index"
+      #carousel
+      class="carousel"
+      [style.--tui-carousel-padding]="'10px'"
+
+    >
       @for (product of products(); track product.id) {
-        <app-products-card *tuiItem [product]="product" />
+        <app-products-card *tuiItem [product]="product"/>
       }
+
+      <tui-pagination size="s" class="pagination" [length]="products().length" [index]="index"></tui-pagination>
+    </tui-carousel>
 
     <button
       iconStart="@tui.chevron-right"
       tuiIconButton
       type="button"
-      (click)="carousel.next()"
+      (click)="nextSlide()"
     >
       Next
     </button>
-    <tui-pagination size="s" class="pagination" [length]="products().length" [index]="index"></tui-pagination>
-  </tui-carousel>
+  </article>
+
 </section>
 
 

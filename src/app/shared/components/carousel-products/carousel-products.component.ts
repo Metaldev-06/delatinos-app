@@ -1,23 +1,68 @@
-import {ChangeDetectionStrategy, Component, input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input, signal} from '@angular/core';
+
+import {TuiButton, TuiIcon} from '@taiga-ui/core';
 import {TuiCarousel, TuiPagination} from '@taiga-ui/kit';
+
 import {ProductsCardComponent} from '../products-card/products-card.component';
 import {ProductData} from '../../../core/interfaces/products.interfaces';
-import {TuiButton} from '@taiga-ui/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {TitleCasePipe} from '@angular/common';
+import {TitleComponent} from '../title/title.component';
 
 @Component({
   selector: 'app-carousel-products',
   standalone: true,
-  imports: [TuiCarousel, TuiPagination, ProductsCardComponent, TuiButton],
+  imports: [
+    TuiCarousel,
+    TuiPagination,
+    ProductsCardComponent,
+    TuiButton,
+    TuiIcon,
+    TitleCasePipe,
+    TitleComponent
+  ],
   templateUrl: './carousel-products.component.html',
   styleUrl: './carousel-products.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarouselProductsComponent implements OnInit {
+export class CarouselProductsComponent {
   public products = input.required<ProductData[]>();
+  public title = input.required<string>()
 
+  public itemsCount = signal<number>(4);
   protected index = 0;
 
+  private readonly breakpointObserver = inject(BreakpointObserver);
+
   ngOnInit(): void {
-    console.log(this.products())
+    this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Tablet, Breakpoints.Web]).subscribe(result => {
+
+      console.log(result)
+
+      if (result.matches) {
+        if (result.breakpoints[Breakpoints.Handset]) {
+          this.itemsCount.set(1);
+        } else if (result.breakpoints[Breakpoints.Tablet]) {
+          this.itemsCount.set(2);
+        } else {
+          this.itemsCount.set(4);
+        }
+      }
+    });
+  }
+  public nextSlide(): void {
+    if (this.index === this.products().length - 4) {
+      this.index = 0;
+    } else {
+      this.index++;
+    }
+  }
+
+  public prevSlide(): void {
+    if (this.index === 0) {
+      this.index = this.products().length - 4;
+    } else {
+      this.index--;
+    }
   }
 }

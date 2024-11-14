@@ -1,0 +1,9 @@
+<section class="divider__container">
+  @for (item of dividerData; track $index) {
+    <div class="divider__card">
+      <img [src]="item.image" [alt]="item.title">
+      <h3>{{item.title}}</h3>
+      <p>{{item.description}}</p>
+    </div>
+  }
+</section>

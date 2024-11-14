@@ -1,0 +1,15 @@
+<section class="product__grid">
+  <article class="products__filter">
+    <app-title [title]="'todos los productos'"/>
+
+    <app-select-filter class="select__container"/>
+  </article>
+
+  <article class="products__container">
+    @if (products()) {
+      @for (product of products().data; track $index) {
+        <app-products-card [product]="product"/>
+      }
+    }
+  </article>
+</section>
