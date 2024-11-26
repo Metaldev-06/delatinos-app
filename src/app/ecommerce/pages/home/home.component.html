@@ -1,13 +1,10 @@
-<app-countries-section/>
+<app-countries-section />
 @if (products().length > 0) {
-  <app-carousel-products [products]="products()" [title]="'novedades'"/>
-}
-@if (products().length > 0) {
-  <app-carousel-products [products]="products()" [title]="'más vendidos'"/>
+<app-carousel-products [products]="products()" [title]="'novedades'" />
+} @if (products().length > 0) {
+<app-carousel-products [products]="products()" [title]="'más vendidos'" />
 }
 
-<app-divider/>
+<app-divider />
 
-@if (data()) {
-  <app-products-grid [products]="data()"/>
-}
+<app-products-grid />

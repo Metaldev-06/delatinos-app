@@ -1,20 +1,27 @@
-<div class="product__card">
+<div class="product__card" [routerLink]="['/product', product().slug]">
   <div class="product__image">
-    <img [src]="product().images[0].imageUrl" [alt]="product().name">
+    <img [src]="product().images[0].imageUrl" [alt]="product().name" />
   </div>
   <div class="product__info">
     <div class="header__card">
-      <p>{{product().name | titlecase}} - {{product().brandId.name | titlecase}}</p>
+      <p>
+        {{ product().name | titlecase }} -
+        {{ product().brandId.name | titlecase }}
+      </p>
 
       <div class="flags__image">
-        <img [src]="product().countryId.image">
+        <img [src]="product().countryId.image" />
       </div>
     </div>
 
     <div class="center__card">
-      <span class="price__card">{{product().price | currency: '' : 'symbol-narrow' : '1.0-0'}}</span>
-      <span class="info__card">{{product().information}}</span>
-      <span class="badge__card">{{product().stock > 0 ? 'en stock' : 'sin stock'}}</span>
+      <span class="price__card">{{
+        product().price | currency: "" : "symbol-narrow" : "1.0-0"
+      }}</span>
+      <span class="info__card">{{ product().information }}</span>
+      <span class="badge__card">{{
+        product().stock > 0 ? "en stock" : "sin stock"
+      }}</span>
     </div>
 
     <div class="bottom__card">

@@ -12,7 +12,7 @@
   /*!COLORS */
   --primary-color: #374664;
   --secondary-color: #4a639a;
-  --tertiary-color: #2F3F61;
+  --tertiary-color: #2f3f61;
   --complementary-color: #4af6d7;
   --background-color: #ecf3f6;
   --disabled-color: #999999;
@@ -30,12 +30,15 @@
   --border-disabled: 1px solid var(--background-disabled);
 
   --tui-background-base: var(--background-color);
+  --t-bg: var(--secondary-color) !important;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 html {
@@ -50,4 +53,8 @@ body {
 
 button {
   cursor: pointer;
+}
+
+.activeNavLink {
+  background-color: rgba(213, 215, 222, 0.17);
 }

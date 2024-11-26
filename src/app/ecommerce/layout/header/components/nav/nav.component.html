@@ -2,7 +2,9 @@
   <div class="nav__menu">
     <button>Productos</button>
 
-    <a>Info de Envíos</a>
+    <a [routerLink]="['/shipping-information']" routerLinkActive="activeNavLink"
+      >Info de Envíos</a
+    >
   </div>
 
   <app-searcher class="nav__searcher" />

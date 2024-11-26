@@ -6,13 +6,7 @@
     [tuiTextfieldLabelOutside]="true"
   >
     Filtrar Por:
-    <input
-      placeholder="Seleccione un filtro"
-      tuiTextfieldLegacy
-    />
-    <tui-data-list-wrapper
-      *tuiDataList
-      [items]="items"
-    />
+    <input placeholder="Seleccione un filtro" tuiTextfieldLegacy />
+    <tui-data-list-wrapper *tuiDataList [items]="items" />
   </tui-select>
 </form>

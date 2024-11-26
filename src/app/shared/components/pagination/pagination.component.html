@@ -1,0 +1,9 @@
+<div class="pagination__container">
+  <ng-template #inputCustomContent>index</ng-template>
+
+  <tui-pagination
+    [index]="index"
+    [length]="length"
+    (indexChange)="goToPage($event)"
+  />
+</div>
