@@ -3,3 +3,7 @@
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 } */
+
+.ecommerce__main {
+  min-height: 90dvh;
+}

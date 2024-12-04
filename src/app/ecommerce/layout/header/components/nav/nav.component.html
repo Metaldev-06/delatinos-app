@@ -1,6 +1,8 @@
 <nav class="nav__container">
   <div class="nav__menu">
-    <button>Productos</button>
+    <button type="button" [tuiDropdown]="content" [(tuiDropdownOpen)]="open">
+      Productos
+    </button>
 
     <a [routerLink]="['/shipping-information']" routerLinkActive="activeNavLink"
       >Info de Envíos</a
@@ -17,3 +19,119 @@
     </button>
   </div>
 </nav>
+
+<ng-template #content>
+  <tui-data-list tuiDataListDropdownManager [size]="size">
+    <button tuiOption type="button" [routerLink]="['/products']">Todos</button>
+
+    <button
+      iconEnd="@tui.chevron-right"
+      tuiDropdownAlign="right"
+      tuiDropdownManual
+      tuiDropdownSided
+      tuiOption
+      type="button"
+      [tuiDropdown]="burgersTmp"
+      [routerLink]="['/products/almacen']"
+    >
+      Almacen
+    </button>
+
+    <button
+      iconEnd="@tui.chevron-right"
+      tuiDropdownAlign="right"
+      tuiDropdownManual
+      tuiDropdownSided
+      tuiOption
+      type="button"
+      [tuiDropdown]="drinksTmp"
+      [routerLink]="['/products/bebidas']"
+    >
+      Bebidas
+    </button>
+
+    <button
+      iconEnd="@tui.chevron-right"
+      tuiDropdownAlign="right"
+      tuiDropdownManual
+      tuiDropdownSided
+      tuiOption
+      type="button"
+      [tuiDropdown]="sweetsTmp"
+      [routerLink]="['/products/dulces']"
+    >
+      Dulces
+    </button>
+  </tui-data-list>
+
+  <ng-template #burgersTmp>
+    <tui-data-list tuiDataListDropdownManager>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/almacen/harinas']"
+      >
+        Harinas
+      </button>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/almacen/condimentos-y-salsas']"
+      >
+        Condimentos y Salsas
+      </button>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/almacen/snacks-y-galletas']"
+      >
+        Snacks y Galletas
+      </button>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/almacen/yerbas-y-cafe']"
+      >
+        Yerbas y Café
+      </button>
+    </tui-data-list>
+  </ng-template>
+
+  <ng-template #drinksTmp>
+    <tui-data-list tuiDataListDropdownManager>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/bebidas/con-alcohol']"
+      >
+        Con Alcohol
+      </button>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/bebidas/sin-alcohol']"
+      >
+        Sin Alcohol
+      </button>
+    </tui-data-list>
+  </ng-template>
+
+  <ng-template #sweetsTmp>
+    <tui-data-list tuiDataListDropdownManager>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/dulces/galletas']"
+      >
+        Galletas
+      </button>
+      <button
+        tuiOption
+        type="button"
+        [routerLink]="['/products/dulces/golosinas']"
+      >
+        Golosinas
+      </button>
+    </tui-data-list>
+  </ng-template>
+</ng-template>

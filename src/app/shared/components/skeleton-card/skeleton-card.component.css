@@ -1,0 +1,13 @@
+.skeleton__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  div {
+    width: 246px;
+    height: 343px;
+    border-radius: 4px;
+  }
+}

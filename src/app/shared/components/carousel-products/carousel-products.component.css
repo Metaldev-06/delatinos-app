@@ -13,5 +13,10 @@
     align-items: center;
     gap: 1rem;
   }
-}
 
+  .skeleton {
+    width: 246px;
+    height: 343px;
+    border-radius: 4px;
+  }
+}

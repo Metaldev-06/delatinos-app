@@ -19,13 +19,19 @@
         product().price | currency: "" : "symbol-narrow" : "1.0-0"
       }}</span>
       <span class="info__card">{{ product().information }}</span>
-      <span class="badge__card">{{
-        product().stock > 0 ? "en stock" : "sin stock"
-      }}</span>
+      <span
+        class="badge__card"
+        [ngClass]="
+          product().stock > 0
+            ? 'badge__card--with-stock'
+            : 'badge__card--without-stock'
+        "
+        >{{ product().stock > 0 ? "en stock" : "sin stock" }}</span
+      >
     </div>
 
     <div class="bottom__card">
-      <button>Añadir al Carrito</button>
+      <button (click)="addToCart($event)">Añadir al Carrito</button>
     </div>
   </div>
 </div>

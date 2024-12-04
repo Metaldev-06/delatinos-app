@@ -18,6 +18,7 @@ export class ProductsService {
     filter?: SelectFilter,
     offset = 0,
     limit = 10,
+    country?: string,
   ): Observable<Products> {
     let params = new HttpParams();
 
@@ -33,6 +34,10 @@ export class ProductsService {
 
     if (limit) {
       params = params.set('limit', limit);
+    }
+
+    if (country) {
+      params = params.set('country', country);
     }
     return this.http.get<Products>(`${this.baseUrl}/products`, { params });
   }

@@ -1,5 +1,5 @@
 <section class="carousel__container wrapper" tuiCarouselButtons>
-  <app-title [title]="title()"/>
+  <app-title [title]="title()" />
   <article class="carousel__products">
     <button
       iconStart="@tui.chevron-left"
@@ -17,13 +17,21 @@
       #carousel
       class="carousel"
       [style.--tui-carousel-padding]="'10px'"
-
     >
       @for (product of products(); track product.id) {
-        <app-products-card *tuiItem [product]="product"/>
+        <app-products-card *tuiItem [product]="product" />
+      } @empty {
+        @for (item of items; track $index) {
+          <span class="skeleton" [tuiSkeleton]="true" *tuiItem>Loading..</span>
+        }
       }
 
-      <tui-pagination size="s" class="pagination" [length]="products().length" [index]="index"></tui-pagination>
+      <tui-pagination
+        size="s"
+        class="pagination"
+        [length]="products().length"
+        [index]="index"
+      ></tui-pagination>
     </tui-carousel>
 
     <button
@@ -35,7 +43,4 @@
       Next
     </button>
   </article>
-
 </section>
-
-

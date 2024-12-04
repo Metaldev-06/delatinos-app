@@ -6,18 +6,13 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { CurrencyPipe, TitleCasePipe } from '@angular/common';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import { CountriesSectionComponent } from '../../../shared/components/countries-section/countries-section.component';
+import { ProductData } from '../../../core/interfaces/products.interfaces';
 import { ProductsService } from '../../../core/services/products.service';
-import {
-  ProductData,
-  Products,
-} from '../../../core/interfaces/products.interfaces';
 import { CarouselProductsComponent } from '../../../shared/components/carousel-products/carousel-products.component';
-import { ProductsCardComponent } from '../../../shared/components/products-card/products-card.component';
+import { CountriesSectionComponent } from '../../../shared/components/countries-section/countries-section.component';
 import { DividerComponent } from '../../../shared/components/divider/divider.component';
 import { ProductsGridComponent } from '../../../shared/components/products-grid/products-grid.component';
 
@@ -26,10 +21,7 @@ import { ProductsGridComponent } from '../../../shared/components/products-grid/
   standalone: true,
   imports: [
     CountriesSectionComponent,
-    TitleCasePipe,
-    CurrencyPipe,
     CarouselProductsComponent,
-    ProductsCardComponent,
     DividerComponent,
     ProductsGridComponent,
   ],

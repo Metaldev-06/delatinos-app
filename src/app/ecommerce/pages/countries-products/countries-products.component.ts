@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input as RouterInput } from '@angular/core';
+import { ProductsGridComponent } from '../../../shared/components/products-grid/products-grid.component';
 
 @Component({
   selector: 'app-countries-products',
   standalone: true,
-  imports: [],
+  imports: [ProductsGridComponent],
   templateUrl: './countries-products.component.html',
-  styleUrl: './countries-products.component.css'
+  styleUrl: './countries-products.component.css',
 })
-export class CountriesProductsComponent {
+export class CountriesProductsComponent implements OnInit {
+  @RouterInput() countryName: string = '';
 
+  ngOnInit(): void {}
 }

@@ -12,7 +12,7 @@ export const EcommerceRoutes: Routes = [
           import('./pages/home/home.routes').then((m) => m.HomeRoutes),
       },
       {
-        path: 'country/:name',
+        path: 'country/:countryName',
         loadChildren: () =>
           import('./pages/countries-products/country.routes').then(
             (m) => m.CountryRoutes,
@@ -31,6 +31,13 @@ export const EcommerceRoutes: Routes = [
           import(
             './pages/shipping-information/shipping-information.routes'
           ).then((m) => m.ShippingInformationRoutes),
+      },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./pages/products/products.routes').then(
+            (m) => m.ProductsRoutes,
+          ),
       },
     ],
   },
