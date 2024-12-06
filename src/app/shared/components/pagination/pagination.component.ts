@@ -4,11 +4,10 @@ import { TuiPagination } from '@taiga-ui/kit';
 import { Pagination } from '../../../core/interfaces/products.interfaces';
 
 @Component({
-  selector: 'app-pagination',
-  standalone: true,
-  imports: [FormsModule, TuiPagination],
-  templateUrl: './pagination.component.html',
-  styleUrl: './pagination.component.css',
+    selector: 'app-pagination',
+    imports: [FormsModule, TuiPagination],
+    templateUrl: './pagination.component.html',
+    styleUrl: './pagination.component.css'
 })
 export class PaginationComponent {
   public pagination = input.required<Pagination>();

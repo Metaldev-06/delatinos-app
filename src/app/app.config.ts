@@ -3,7 +3,6 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import {
   ApplicationConfig,
   provideExperimentalZonelessChangeDetection,
-  provideZoneChangeDetection,
 } from '@angular/core';
 import {
   provideRouter,

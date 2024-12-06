@@ -10,11 +10,10 @@ import { noSpaceValidator } from '../../../core/helpers/noSpaceValidator.helper'
 import { TuiIcon } from '@taiga-ui/core';
 
 @Component({
-  selector: 'app-searcher',
-  standalone: true,
-  imports: [ReactiveFormsModule, TuiIcon],
-  templateUrl: './searcher.component.html',
-  styleUrl: './searcher.component.css',
+    selector: 'app-searcher',
+    imports: [ReactiveFormsModule, TuiIcon],
+    templateUrl: './searcher.component.html',
+    styleUrl: './searcher.component.css'
 })
 export class SearcherComponent {
   public searchForm!: FormGroup;

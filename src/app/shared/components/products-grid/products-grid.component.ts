@@ -25,19 +25,18 @@ import { PaginationComponent } from '../pagination/pagination.component';
 import { SkeletonCardComponent } from '../skeleton-card/skeleton-card.component';
 
 @Component({
-  selector: 'app-products-grid',
-  standalone: true,
-  imports: [
-    ProductsCardComponent,
-    TitleComponent,
-    SelectFilterComponent,
-    PaginationComponent,
-    SkeletonCardComponent,
-    TuiBlockStatus,
-  ],
-  templateUrl: './products-grid.component.html',
-  styleUrl: './products-grid.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-products-grid',
+    imports: [
+        ProductsCardComponent,
+        TitleComponent,
+        SelectFilterComponent,
+        PaginationComponent,
+        SkeletonCardComponent,
+        TuiBlockStatus,
+    ],
+    templateUrl: './products-grid.component.html',
+    styleUrl: './products-grid.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductsGridComponent implements OnInit {
   public country = input<string>('');

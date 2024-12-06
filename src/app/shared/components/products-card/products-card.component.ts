@@ -4,11 +4,10 @@ import { CurrencyPipe, NgClass, TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-products-card',
-  standalone: true,
-  imports: [CurrencyPipe, TitleCasePipe, RouterLink, NgClass],
-  templateUrl: './products-card.component.html',
-  styleUrl: './products-card.component.css',
+    selector: 'app-products-card',
+    imports: [CurrencyPipe, TitleCasePipe, RouterLink, NgClass],
+    templateUrl: './products-card.component.html',
+    styleUrl: './products-card.component.css'
 })
 export class ProductsCardComponent {
   public product = input.required<ProductData>();

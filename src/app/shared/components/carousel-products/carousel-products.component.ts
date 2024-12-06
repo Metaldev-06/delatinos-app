@@ -6,26 +6,22 @@ import {
   signal,
 } from '@angular/core';
 
-import { TuiButton, TuiIcon } from '@taiga-ui/core';
+import { TuiButton } from '@taiga-ui/core';
 import { TuiCarousel, TuiPagination, TuiSkeleton } from '@taiga-ui/kit';
 
 import { ProductsCardComponent } from '../products-card/products-card.component';
 import { ProductData } from '../../../core/interfaces/products.interfaces';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { TitleCasePipe } from '@angular/common';
 import { TitleComponent } from '../title/title.component';
-import { SkeletonCardComponent } from '../skeleton-card/skeleton-card.component';
 
 @Component({
   selector: 'app-carousel-products',
-  standalone: true,
   imports: [
     TuiCarousel,
     TuiPagination,
     ProductsCardComponent,
     TuiButton,
     TitleComponent,
-    SkeletonCardComponent,
     TuiSkeleton,
   ],
   templateUrl: './carousel-products.component.html',

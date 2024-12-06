@@ -7,11 +7,10 @@ interface DividerData {
 }
 
 @Component({
-  selector: 'app-divider',
-  standalone: true,
-  imports: [],
-  templateUrl: './divider.component.html',
-  styleUrl: './divider.component.css'
+    selector: 'app-divider',
+    imports: [],
+    templateUrl: './divider.component.html',
+    styleUrl: './divider.component.css'
 })
 export class DividerComponent {
   public dividerData: DividerData[] = [

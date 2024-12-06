@@ -17,12 +17,11 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-countries-section',
-  standalone: true,
-  imports: [TitleCasePipe, RouterLink],
-  templateUrl: './countries-section.component.html',
-  styleUrl: './countries-section.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-countries-section',
+    imports: [TitleCasePipe, RouterLink],
+    templateUrl: './countries-section.component.html',
+    styleUrl: './countries-section.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CountriesSectionComponent implements OnInit {
   public countries = signal<CountriesData[]>([]);

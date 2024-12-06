@@ -16,20 +16,19 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CategoriesData } from '../../../../../core/interfaces/categories.interface';
 
 @Component({
-  selector: 'app-nav',
-  standalone: true,
-  imports: [
-    TuiIcon,
-    TuiBadgedContent,
-    SearcherComponent,
-    RouterLink,
-    RouterLinkActive,
-    TuiDataList,
-    TuiDataListDropdownManager,
-    TuiDropdown,
-  ],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css',
+    selector: 'app-nav',
+    imports: [
+        TuiIcon,
+        TuiBadgedContent,
+        SearcherComponent,
+        RouterLink,
+        RouterLinkActive,
+        TuiDataList,
+        TuiDataListDropdownManager,
+        TuiDropdown,
+    ],
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {
   public categories = signal<CategoriesData[]>([]);

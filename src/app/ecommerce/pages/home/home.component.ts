@@ -17,17 +17,16 @@ import { DividerComponent } from '../../../shared/components/divider/divider.com
 import { ProductsGridComponent } from '../../../shared/components/products-grid/products-grid.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    CountriesSectionComponent,
-    CarouselProductsComponent,
-    DividerComponent,
-    ProductsGridComponent,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-home',
+    imports: [
+        CountriesSectionComponent,
+        CarouselProductsComponent,
+        DividerComponent,
+        ProductsGridComponent,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
   public products = signal<ProductData[]>([]);

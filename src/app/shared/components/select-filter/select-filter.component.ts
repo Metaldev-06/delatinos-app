@@ -10,22 +10,21 @@ import {
 import { SelectFilter } from '../../../core/interfaces/select-filter.interface';
 
 @Component({
-  selector: 'app-select-filter',
-  standalone: true,
-  imports: [
-    TuiDataList,
-    TuiDataListWrapper,
-    TuiSelectModule,
-    TuiTextfieldControllerModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './select-filter.component.html',
-  styleUrl: './select-filter.component.css',
-  providers: [
-    tuiItemsHandlersProvider({
-      stringify: (item: SelectFilter) => `${item.name}`,
-    }),
-  ],
+    selector: 'app-select-filter',
+    imports: [
+        TuiDataList,
+        TuiDataListWrapper,
+        TuiSelectModule,
+        TuiTextfieldControllerModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './select-filter.component.html',
+    styleUrl: './select-filter.component.css',
+    providers: [
+        tuiItemsHandlersProvider({
+            stringify: (item: SelectFilter) => `${item.name}`,
+        }),
+    ]
 })
 export class SelectFilterComponent implements OnInit {
   public selectedFilter = output<SelectFilter>();
