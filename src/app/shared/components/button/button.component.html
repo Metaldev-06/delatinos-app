@@ -1,0 +1,8 @@
+<button
+  [ngClass]="{
+    primary__button: typeButton(),
+    secondary__button: !typeButton(),
+  }"
+>
+  {{ text() }}
+</button>

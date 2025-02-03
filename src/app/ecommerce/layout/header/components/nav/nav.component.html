@@ -1,6 +1,10 @@
 <nav class="nav__container">
   <div class="nav__menu">
-    <button type="button" [tuiDropdown]="content" [(tuiDropdownOpen)]="open">
+    <button
+      type="button"
+      [tuiDropdown]="content"
+      [(tuiDropdownOpen)]="dropDownProducts"
+    >
       Productos
     </button>
 
@@ -12,13 +16,42 @@
   <app-searcher class="nav__searcher" />
 
   <div class="nav__interactions">
-    <button><tui-icon icon="@tui.user"></tui-icon></button>
+    @if (!customerData().isAutehnticated) {
+      <button [routerLink]="'auth'">
+        <tui-icon icon="@tui.user"></tui-icon>
+      </button>
+    } @else {
+      <div
+        class="nav__interactions--auth"
+        [tuiDropdown]="settings"
+        [(tuiDropdownOpen)]="dropDownUserActions"
+      >
+        <div>Hola!, {{ customerData().name }}</div>
+        <img [src]="customerData().image" alt="" width="20" />
+      </div>
+    }
+
     <button>
       <tui-icon icon="@tui.shopping-bag"> </tui-icon>
       <span class="badge">+99</span>
     </button>
   </div>
 </nav>
+
+<ng-template #settings>
+  <tui-data-list tuiDataListDropdownManager [size]="size">
+    <button tuiOption type="button" [routerLink]="['/orders']">
+      Mi cuenta
+    </button>
+    <button tuiOption type="button" [routerLink]="['/orders']">Pedidos</button>
+    <button tuiOption type="button" [routerLink]="['/orders']">
+      Favoritos
+    </button>
+    <button tuiOption type="button" (click)="openDialog()">
+      Cerrar Sesión
+    </button>
+  </tui-data-list>
+</ng-template>
 
 <ng-template #content>
   <tui-data-list tuiDataListDropdownManager [size]="size">

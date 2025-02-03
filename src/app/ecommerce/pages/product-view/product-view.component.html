@@ -1,1 +1,86 @@
-<p>product-view works!</p>
+<section class="product__view">
+  <article class="breadcrumbs__container">
+    <tui-breadcrumbs [size]="'l'">
+      @for (item of breadcrumbs; track $index) {
+        <ng-container>
+          <a *tuiItem tuiLink [routerLink]="item.routerLink">
+            {{ item.caption | titlecase }}
+          </a>
+        </ng-container>
+      }
+    </tui-breadcrumbs>
+  </article>
+
+  <article class="product__content">
+    @if (!isError()) {
+      @defer (when !isLoading()) {
+        <div class="image__container">
+          <img
+            [src]="product().images[0].imageUrl"
+            [alt]="product().name"
+            width="200"
+          />
+        </div>
+
+        <div class="info__container">
+          <div class="header__product">
+            <h1>{{ product().name }} - {{ product().brandId.name }}</h1>
+          </div>
+
+          <h2>{{ product().price | currency: "$" }}</h2>
+
+          <p>
+            {{ product().description }}
+          </p>
+
+          <form class="actions__container">
+            <div class="actions__information">
+              <input type="number" min="1" [max]="product().stock" value="1" />
+
+              <span
+                class="badge__card"
+                [ngClass]="
+                  product().stock > 0
+                    ? 'badge__card--with-stock'
+                    : 'badge__card--without-stock'
+                "
+                >{{ product().stock > 0 ? "en stock" : "sin stock" }}</span
+              >
+            </div>
+
+            <div class="buttons__container">
+              <app-button [text]="'Añadir al carrito'" [typeButton]="false" />
+              <app-button [text]="'Comprar ahora'" [typeButton]="true" />
+            </div>
+          </form>
+        </div>
+      } @placeholder {
+        <app-skeleton />
+      } @loading {
+        <app-skeleton />
+      }
+    } @else {
+      <tui-block-status>
+        <img
+          alt="No se encontró el producto"
+          src="./images/not-found.svg"
+          tuiSlot="top"
+          class="image"
+        />
+
+        <h4>No se encontró el producto</h4>
+      </tui-block-status>
+    }
+  </article>
+
+  <article class="services__container">
+    <app-divider />
+  </article>
+
+  <article class="related__products">
+    <app-carousel-products
+      [products]="relatedProducts()"
+      [title]="'Productos relacionados'"
+    />
+  </article>
+</section>

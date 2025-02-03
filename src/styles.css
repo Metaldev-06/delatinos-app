@@ -31,6 +31,7 @@
 
   --tui-background-base: var(--background-color);
   --t-bg: var(--secondary-color) !important;
+  --tui-thickness: 1em !important;
 }
 
 * {

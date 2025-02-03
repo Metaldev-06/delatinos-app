@@ -1,3 +1,43 @@
 <section>
+  <div class="banner__container">
+    @if (!isError()) {
+      @defer (when isLoading()) {
+        <img [src]="banner().image" [alt]="banner().name" />
+      } @placeholder {
+        <section
+          class="skeleton"
+          tuiAppearance="neutral"
+          tuiCardLarge
+          [tuiSkeleton]="true"
+        >
+          <h2 tuiHeader>
+            <span tuiTitle>
+              Card
+              <span tuiSubtitle>Subtitle</span>
+            </span>
+          </h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </section>
+      } @loading {
+        <section
+          class="skeleton"
+          tuiAppearance="neutral"
+          tuiCardLarge
+          [tuiSkeleton]="true"
+        >
+          <h2 tuiHeader>
+            <span tuiTitle>
+              Card
+              <span tuiSubtitle>Subtitle</span>
+            </span>
+          </h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </section>
+      }
+    }
+  </div>
+
   <app-products-grid [country]="countryName" />
 </section>

@@ -1,0 +1,26 @@
+button {
+  width: 220px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid var(--tertiary-color);
+  font-weight: normal;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+}
+
+.primary__button {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.secondary__button {
+  background-color: var(--white-color);
+  color: var(--tertiary-color);
+}

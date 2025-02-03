@@ -56,6 +56,31 @@
     height: 30px;
   }
 
+  .nav__interactions--auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* padding: 0.1rem; */
+
+    img {
+      width: 100%;
+      width: 36px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      border-radius: 7px;
+    }
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
   .nav__interactions {
     display: flex;
     gap: 1rem;
@@ -89,7 +114,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
   }
 }

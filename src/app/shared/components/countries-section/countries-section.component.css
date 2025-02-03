@@ -20,7 +20,7 @@
 
     .image__container {
       width: 120px;
-      height: 120px;
+      height: 140px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,17 +31,16 @@
       cursor: pointer;
 
       .flag__country {
-        width: 100px;
-        border-radius: 50%;
+        width: 110px;
+        height: 110px;
         overflow: hidden;
-        transition: transform 0.3s ease;
-        aspect-ratio: 1/1;
+        border-radius: 50%;
+        transition: all 0.3s ease;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          object-position: center;
           aspect-ratio: 1/1;
         }
       }
